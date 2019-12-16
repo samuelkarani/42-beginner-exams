@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include "flood_fill.h"
+#include "flood_fill2.h"
 
 void flood_fill(char **tab, t_point size, t_point begin);
 
@@ -25,7 +25,7 @@ void print_tab(char **area)
 	while (*area)
 	{
 		fputstr(*area++);
-			fputchar('\n');
+		fputchar('\n');
 	}
 }
 
@@ -47,26 +47,24 @@ char **make_area(char *zone[], int l)
 
 int main(void)
 {
-    char **area;
-    t_point size = { 2, 3 };
-    t_point begin = { 1, 1 };
-    char *zone[] = {
-        "11111111",
-        "10001001",
-        "10010001",
-        "10110001",
-        "11100001"
-    };
+	char **area;
+	t_point size = {2, 3};
+	t_point begin = {1, 1};
+	char *zone[] = {
+		"11111111",
+		"10001001",
+		"10010001",
+		"10110001",
+		"11100001"};
 
-    char *zone2[] = {
+	char *zone2[] = {
 		"00",
 		"00",
-		"01"
-	};
-    area = make_area(zone2, size.y);
-    print_tab(area);
-    flood_fill(area, size, begin);
-    fputchar('\n');
-    print_tab(area);
-    return (0);
+		"01"};
+	area = make_area(zone2, size.y);
+	print_tab(area);
+	flood_fill(area, size, begin);
+	fputchar('\n');
+	print_tab(area);
+	return (0);
 }
