@@ -1,6 +1,6 @@
 #include <unistd.h>
 
-int  print_num(int n)
+int print_num(int n)
 {
 	if (n < 0)
 	{
@@ -28,6 +28,7 @@ int calc(int a, int b, char c)
 	return a % b;
 }
 
+// FP Exception i.e. div by 0
 int main(int ac, char **av)
 {
 	char ops[] = {'+', '-', '*', '/', '%'};
@@ -61,7 +62,7 @@ int main(int ac, char **av)
 		if (!err)
 		{
 			int i = 0, idx = 0;
-			int arr[nums]; 
+			int arr[nums];
 			while (s[i])
 			{
 				while (s[i] == ' ')

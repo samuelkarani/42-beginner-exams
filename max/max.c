@@ -1,6 +1,6 @@
-int             max(int* tab, unsigned int len)
+int max(int *tab, unsigned int len)
 {
-	int mx = 0;
+	int mx = 0; // should be INT MIN
 	for (unsigned int i = 0; i < len; i++)
 		if (tab[i] > mx)
 			mx = tab[i];

@@ -35,10 +35,11 @@ int main(int ac, char **av)
 	if (ac == 2)
 	{
 		char *s = av[1];
-		int n = fstrlen(s),  start = 0, idx = 0;
+		int n = fstrlen(s), start = 0, idx = 0;
 		char *words[n];
 		for (int i = 0; s[i]; i++)
 		{
+			// bad word parsing
 			if (fiss(s[i]) && !fiss(s[i - 1]))
 			{
 				words[idx++] = fstrsub(s, start, i);
