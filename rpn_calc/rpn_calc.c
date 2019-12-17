@@ -39,6 +39,7 @@ int main(int ac, char **av)
 	{
 		char *s = av[1];
 		int i = 0, nops = 0, nums = 0;
+		// error checking should check sign xi has at least numbers ni + 2 preceding it
 		while (s[i])
 		{
 			int j = i;
